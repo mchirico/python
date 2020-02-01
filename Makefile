@@ -1,12 +1,18 @@
+# You can change these for your project
+project=python
+tag=test
+gcpProject=mchirico
+port=3000
 
 docker-build:
-	docker build --no-cache -t gcr.io/mchirico/python:test -f Dockerfile .
+	docker build --no-cache -t gcr.io/$(gcpProject)/$(project):$(tag) -f Dockerfile .
 
 push:
-	docker push gcr.io/mchirico/python:test
+	docker push gcr.io/$(gcpProject)/$(project):$(tag)
 
-build:
-	go build -v .
 
 run:
-	docker run --rm -it -p 3000:3000  gcr.io/mchirico/python:test /bin/bash
+	docker run --rm -it -p $(port):$(port)  gcr.io/$(gcpProject)/$(project):$(tag) /bin/bash
+
+test:
+	docker run --rm -it -p $(port):$(port)  gcr.io/$(gcpProject)/$(project):$(tag) pytest
