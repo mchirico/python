@@ -44,6 +44,5 @@ steps:
 
 - script: |
     make
-  env:
-    CODECOV_TOKEN: $(CODECOV_TOKEN)
+    make test
   displayName: 'Docker make'

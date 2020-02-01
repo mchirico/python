@@ -15,4 +15,4 @@ run:
 	docker run --rm -it -p $(port):$(port)  gcr.io/$(gcpProject)/$(project):$(tag) /bin/bash
 
 test:
-	docker run --rm -it -p $(port):$(port)  gcr.io/$(gcpProject)/$(project):$(tag) pytest
+	docker run --rm  -p $(port):$(port)  gcr.io/$(gcpProject)/$(project):$(tag) pytest
