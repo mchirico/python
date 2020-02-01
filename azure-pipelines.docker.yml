@@ -1,6 +1,6 @@
 # 
-# 
-# 
+#   docker pull aipiggybot/python
+#   docker run --rm -it aipiggybot/python /bin/bash
 # 
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
@@ -11,7 +11,7 @@ pool:
 
 variables:
   dockerId: aipiggybot  
-  imageName: p2p-pod  # Replace with the name of the image you want to publish
+  imageName: python  # Replace with the name of the image you want to publish
 
 
 steps:
@@ -44,6 +44,16 @@ steps:
 
 - script: |
     make
-  env:
-    CODECOV_TOKEN: $(CODECOV_TOKEN)
+    make test
   displayName: 'Docker make'
+
+# Docker
+- script: |
+    set -e
+    docker build --no-cache -t $(dockerId)/$(imageName) .
+    echo "${DOCKERPASSWORD}"| docker login -u=$(dockerId) --password-stdin
+    docker push $(dockerId)/$(imageName)
+    docker logout
+  env:
+    DOCKERPASSWORD: $(dockerPassword)
+  displayName: 'Make docker image public'
