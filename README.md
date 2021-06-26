@@ -6,6 +6,15 @@
 
 This is a Python starter project.
 
+
+If you're using vscode, set this up with nose
+
+**shft-cmd-p** and select "Python Configuration Test"
+
+![image](https://user-images.githubusercontent.com/755710/123519688-dd2cff80-d67a-11eb-8c3a-2bca26c55ae2.png)
+
+
+
 ```
 
 ```
