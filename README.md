@@ -7,11 +7,25 @@
 This is a Python starter project.
 
 
+
 If you're using vscode, set this up with nose
 
 **shft-cmd-p** and select "Python Configuration Test"
 
 ![image](https://user-images.githubusercontent.com/755710/123519688-dd2cff80-d67a-11eb-8c3a-2bca26c55ae2.png)
+
+
+# Activate Test Runners
+
+Also use Python Discover tests... get get test runner to show up...
+
+![image](https://user-images.githubusercontent.com/755710/123878715-a4588900-d90d-11eb-8cb2-6158562dbfa5.png)
+
+
+
+
+
+
 
 
 
